@@ -1,4 +1,6 @@
 /* --- STATE --- */
-export interface ContainerAState {}
+export interface ContainerAState {
+  value: number;
+}
 
 export type ContainerState = ContainerAState;

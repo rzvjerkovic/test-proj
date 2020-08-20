@@ -14,6 +14,8 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { selectContainerB } from './selectors';
 import { containerBSaga } from './saga';
+import { selectContainerAValue } from '../ContainerA/selectors';
+import { containerASaga } from '../ContainerA/saga';
 
 interface Props {}
 
@@ -22,7 +24,7 @@ export const ContainerB = memo((props: Props) => {
   useInjectSaga({ key: sliceKey, saga: containerBSaga });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const containerB = useSelector(selectContainerB);
+  const containerAValue = useSelector(selectContainerAValue);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
 
@@ -35,7 +37,9 @@ export const ContainerB = memo((props: Props) => {
         <title>ContainerB</title>
         <meta name="description" content="Description of ContainerB" />
       </Helmet>
-      <Div>{t('')}</Div>
+      <Div>
+        {t('ContainerB')} : {containerAValue}
+      </Div>
     </>
   );
 });

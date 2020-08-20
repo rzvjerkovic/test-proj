@@ -3,13 +3,18 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
 
 // The initial state of the ContainerA container
-export const initialState: ContainerState = {};
+export const initialState: ContainerState = {
+  value: 1,
+};
 
 const containerASlice = createSlice({
   name: 'containerA',
   initialState,
   reducers: {
-    someAction(state, action: PayloadAction<any>) {},
+    increaseCounterStart(state, action: PayloadAction<any>) {},
+    increaseCounterSuccess(state, action: PayloadAction<any>) {
+      state.value = state.value + 1;
+    },
   },
 });
 

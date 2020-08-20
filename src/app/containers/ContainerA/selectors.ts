@@ -9,3 +9,8 @@ export const selectContainerA = createSelector(
   [selectDomain],
   containerAState => containerAState,
 );
+
+export const selectContainerAValue = createSelector(
+  [selectDomain],
+  containerAState => containerAState.value,
+);

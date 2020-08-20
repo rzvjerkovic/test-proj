@@ -1,14 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { ContainerA } from '../ContainerA';
+import { ContainerB } from '../ContainerB';
 
 export function HomePage() {
   return (
     <>
-      <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="A Boilerplate application homepage" />
-      </Helmet>
-      <span>HomePage container</span>
+      <ContainerA />
+      <ContainerB />
     </>
   );
 }
