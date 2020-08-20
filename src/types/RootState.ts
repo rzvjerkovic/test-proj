@@ -1,3 +1,5 @@
+import { ContainerAState } from 'app/containers/ContainerA/types';
+import { ContainerBState } from 'app/containers/ContainerB/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -5,5 +7,7 @@
   You have to declare them here manually
 */
 export interface RootState {
+  containerA?: ContainerAState;
+  containerB?: ContainerBState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
